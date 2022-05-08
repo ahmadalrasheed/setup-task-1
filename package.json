@@ -44,10 +44,6 @@
     "lint-staged": {
         "*.{js,ts,tsx}": [
             "eslint --quiet --cache --fix"
-        ],
-        "*.{ts,tsx}": [
-            "yarn format:fix",
-            "npm run validate"
         ]
     },
     "eslintConfig": {
