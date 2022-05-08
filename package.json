@@ -42,9 +42,9 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-      "*.{js,ts,tsx}": [
-        "eslint --quiet --cache --fix"
-    ],
+        "*.{js,ts,tsx}": [
+            "eslint --quiet --cache --fix"
+        ],
         "*.{json,js,ts,jsx,tsx,html}": [
             "prettier --write",
             "npm run validate"
