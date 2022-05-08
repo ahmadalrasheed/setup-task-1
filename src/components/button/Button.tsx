@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'astroturf/react';
+import styled from 'styled-components';
 
 interface ButtonProps {
     children?: React.ReactNode;
@@ -11,7 +11,7 @@ interface ButtonProps {
     fullWidth?: Boolean;
 }
 
-const Box = styled('button', { allowAs: true })<ButtonProps>`
+const Box = styled.button<ButtonProps>`
     @import 'theme/breakpoints.scss';
     @import 'theme/palette.scss';
     @import 'theme/typography.scss';
