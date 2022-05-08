@@ -21,7 +21,6 @@ module.exports = {
     },
     plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
     rules: {
-        'react/display-name': 'off',
         'dot-notation': 'off',
         'arrow-body-style': 'off',
         'import/no-named-default': 'off',
