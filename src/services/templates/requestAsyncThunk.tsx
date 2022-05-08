@@ -1,14 +1,14 @@
 import axios from "./axios";
 import { createAsyncThunk, nanoid, } from "@reduxjs/toolkit";
 
-interface RequestProps {
+interface requestProps {
   storeName: string,
   _url: string,
   exact?: string,
   method: 'POST' | 'GET' | 'PATCH' | 'UPLOAD'
 }
 
-interface ParamsProps {
+interface paramsProps {
   urlParams?: string | '',
 }
 
@@ -17,10 +17,10 @@ const request = ({
   _url,
   exact,
   ...rest
-}: RequestProps) => {
+}: requestProps) => {
   return createAsyncThunk(
     _url + exact,
-    async (params: ParamsProps, { rejectWithValue }) => {
+    async (params: paramsProps, { rejectWithValue }) => {
 
       let url = _url || "";
 
