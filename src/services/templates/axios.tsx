@@ -1,21 +1,22 @@
 import { default as axiosDefault } from "axios";
-import { withVersioning, VersioningStrategy, AxiosInstanceWithVersioning } from "axios-api-versioning";
 import {
-  authRequest,
-  errorResponse
-} from "../interceptors";
+  withVersioning,
+  VersioningStrategy,
+  AxiosInstanceWithVersioning,
+} from "axios-api-versioning";
+import { authRequest, errorResponse } from "../interceptors";
 
 interface axiosProps {
-  url: string,
-  method?: string,
-  params?: object
+  url: string;
+  method?: string;
+  params?: object;
 }
 
-const BACKEND_API_ENDPOINT = ""
+const BACKEND_API_ENDPOINT = "";
 
 if (process.env.NODE_ENV === "development" && !BACKEND_API_ENDPOINT) {
   console.log(
-    "BACKEND_API_ENDPOINT config value not found. Please check your environment variables."
+    "BACKEND_API_ENDPOINT config value not found. Please check your environment variables.",
   );
 }
 
@@ -29,7 +30,6 @@ const clientAction: AxiosInstanceWithVersioning = withVersioning(baseClient, {
   versioningStrategy: VersioningStrategy.UrlPath,
 });
 
-
 clientAction.interceptors.request.use(...authRequest());
 clientAction.interceptors.response.use(...errorResponse());
 
@@ -37,7 +37,7 @@ const axios = async ({ url, method, params = {}, ...rest }: axiosProps) => {
   const config = {
     url,
     method,
-    data: {}
+    data: {},
   };
 
   switch (method) {
@@ -58,4 +58,4 @@ const axios = async ({ url, method, params = {}, ...rest }: axiosProps) => {
   });
 };
 
-export default axios
+export default axios;

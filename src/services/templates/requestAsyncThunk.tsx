@@ -1,27 +1,21 @@
 import axios from "./axios";
-import { createAsyncThunk, nanoid, } from "@reduxjs/toolkit";
+import { createAsyncThunk, nanoid } from "@reduxjs/toolkit";
 
 interface requestProps {
-  storeName: string,
-  _url: string,
-  exact?: string,
-  method: 'POST' | 'GET' | 'PATCH' | 'UPLOAD'
+  storeName: string;
+  _url: string;
+  exact?: string;
+  method: "POST" | "GET" | "PATCH" | "UPLOAD";
 }
 
 interface paramsProps {
-  urlParams?: string | '',
+  urlParams?: string | "";
 }
 
-const request = ({
-  storeName,
-  _url,
-  exact,
-  ...rest
-}: requestProps) => {
+const request = ({ storeName, _url, exact, ...rest }: requestProps) => {
   return createAsyncThunk(
     _url + exact,
     async (params: paramsProps, { rejectWithValue }) => {
-
       let url = _url || "";
 
       if (params?.urlParams) {
@@ -33,7 +27,7 @@ const request = ({
         const result = await axios({
           params,
           url,
-          ...rest
+          ...rest,
         });
 
         return result;
@@ -47,8 +41,8 @@ const request = ({
           id: nanoid(),
         });
       }
-    }
+    },
   );
 };
 
-export default request
+export default request;

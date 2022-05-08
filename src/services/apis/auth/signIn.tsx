@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { requestAsyncThunk , responseAsyncThunk} from '../../templates'
+import { requestAsyncThunk, responseAsyncThunk } from "../../templates";
 
 interface UsersState {
-  entities: []
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed',
-  currentRequestId: undefined,
-  error: [],
+  entities: [];
+  loading: "idle" | "pending" | "succeeded" | "failed";
+  currentRequestId: undefined;
+  error: [];
 }
 
 const initialState = {
@@ -13,7 +13,7 @@ const initialState = {
   entities: {},
   currentRequestId: undefined,
   error: [],
-} as UsersState
+} as UsersState;
 
 export const signIn = () => {
   return requestAsyncThunk({
@@ -30,8 +30,6 @@ export const authSlice = createSlice({
     resetAction: () => {
       return initialState;
     },
-
   },
   extraReducers: responseAsyncThunk(signIn()),
 });
-

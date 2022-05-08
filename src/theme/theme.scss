@@ -1,5 +1,5 @@
-@import 'theme/palette.scss';
-@import 'theme/fonts.scss';
+@import "theme/palette.scss";
+@import "theme/fonts.scss";
 
 html,
 body {
@@ -14,7 +14,7 @@ body {
   }
 }
 
-[dir='rtl'] {
+[dir="rtl"] {
   font-family: $rtlFontFamily;
 
   body {

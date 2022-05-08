@@ -1,15 +1,13 @@
 import { persistStore } from "redux-persist";
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 
 import reducers from "./reducers";
 
 const store = configureStore({
-    reducer: reducers,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware()
-            .concat(logger),
-})
+  reducer: reducers,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+});
 
 const persistor = persistStore(store);
 

@@ -35,4 +35,4 @@ const response = (Request: any) => {
   };
 };
 
-export default response
+export default response;
