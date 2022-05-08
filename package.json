@@ -45,8 +45,9 @@
         "*.{js,ts,tsx}": [
             "eslint --quiet --cache --fix"
         ],
-        "*.{json,js,ts,jsx,tsx,html}": [
-            "prettier --write"
+        "*.{ts,tsx}": [
+            "yarn format:fix",
+            "npm run validate"
         ]
     },
     "eslintConfig": {
