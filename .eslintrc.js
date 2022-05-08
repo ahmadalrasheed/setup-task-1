@@ -29,12 +29,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.tsx', '.ts'] }],
         camelcase: [2, { properties: 'never' }],
-        'react/function-component-definition': [
-            2,
-            {
-                namedComponents: 'function-declaration',
-            },
-        ],
+        'react/function-component-definition': 'off',
         'react-hooks/exhaustive-deps': 'error',
         'react/prop-types': 'off',
         'no-var': 'error',
