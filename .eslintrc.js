@@ -21,6 +21,20 @@ module.exports = {
     },
     plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
     rules: {
+        'dot-notation': 'off',
+        'arrow-body-style': 'off',
+        'import/no-named-default': 'off',
+        'import/prefer-default-export': 'off',
+        'import/extensions': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-filename-extension': [1, { extensions: ['.js', '.tsx', '.ts'] }],
+        camelcase: [2, { properties: 'never' }],
+        'react/function-component-definition': [
+            2,
+            {
+                namedComponents: 'function-declaration',
+            },
+        ],
         'react-hooks/exhaustive-deps': 'error',
         'react/prop-types': 'off',
         'no-var': 'error',

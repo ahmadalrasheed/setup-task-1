@@ -1,81 +1,89 @@
 {
-  "name": "react-main",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@reduxjs/toolkit": "^1.8.1",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.0",
-    "@types/node": "^16.11.33",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.3",
-    "axios": "^0.27.2",
-    "axios-api-versioning": "^3.0.0",
-    "i18next": "^21.7.1",
-    "localforage": "^1.10.0",
-    "lodash": "^4.17.21",
-    "moment": "^2.29.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-i18next": "^11.16.9",
-    "react-scripts": "5.0.1",
-    "redux-logger": "^3.0.6",
-    "redux-persist": "^6.0.0",
-    "sass": "^1.51.0",
-    "typescript": "^4.6.4",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "eslint --ext .tsx,.ts .",
-    "prettier": "prettier . --ignore-path .gitignore",
-    "format:check": "npm run prettier -- --check",
-    "format:fix": "npm run prettier -- --write",
-    "validate": "run-p lint type:check format:check",
-    "type:check": "tsc",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.182",
-    "@types/redux-logger": "^3.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
-    "eslint": "^8.15.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "eslint-plugin-security": "^1.5.0",
-    "husky": ">=6",
-    "lint-staged": ">=10",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.6.2"
-  }
+    "name": "react-main",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@reduxjs/toolkit": "^1.8.1",
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.2.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.5.0",
+        "@types/node": "^16.11.33",
+        "@types/react": "^18.0.9",
+        "@types/react-dom": "^18.0.3",
+        "axios": "^0.27.2",
+        "axios-api-versioning": "^3.0.0",
+        "i18next": "^21.7.1",
+        "localforage": "^1.10.0",
+        "lodash": "^4.17.21",
+        "moment": "^2.29.3",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
+        "react-i18next": "^11.16.9",
+        "react-scripts": "5.0.1",
+        "redux-logger": "^3.0.6",
+        "redux-persist": "^6.0.0",
+        "sass": "^1.51.0",
+        "typescript": "^4.6.4",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "format": "prettier --write src/**/*.ts{,x}",
+        "lint": "eslint --ext .tsx,.ts .",
+        "prettier": "prettier . --ignore-path .gitignore",
+        "format:check": "npm run prettier -- --check",
+        "format:fix": "npm run prettier -- --write",
+        "validate": "run-p lint type:check format:check",
+        "type:check": "tsc",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "eslint --quiet --cache --fix"
+        ],
+        "*.{json,js,ts,jsx,tsx,html}": [
+            "prettier --write"
+        ]
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/lodash": "^4.14.182",
+        "@types/redux-logger": "^3.0.9",
+        "@typescript-eslint/eslint-plugin": "^5.22.0",
+        "@typescript-eslint/parser": "^5.22.0",
+        "eslint": "^8.15.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react-hooks": "^4.5.0",
+        "eslint-plugin-security": "^1.5.0",
+        "husky": ">=6",
+        "lint-staged": ">=10",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.6.2"
+    }
 }
