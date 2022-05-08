@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { requestAsyncThunk , responseAsyncThunk} from '../../templates'
+import { requestAsyncThunk, responseAsyncThunk } from '../../templates'
 
 interface UsersState {
   entities: []

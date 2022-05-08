@@ -5,7 +5,7 @@ import {
   errorResponse
 } from "../interceptors";
 
-interface axiosProps {
+interface AxiosProps {
   url: string,
   method?: string,
   params?: object
@@ -33,7 +33,7 @@ const clientAction: AxiosInstanceWithVersioning = withVersioning(baseClient, {
 clientAction.interceptors.request.use(...authRequest());
 clientAction.interceptors.response.use(...errorResponse());
 
-const axios = async ({ url, method, params = {}, ...rest }: axiosProps) => {
+const axios = async ({ url, method, params = {}, ...rest }: AxiosProps) => {
   const config = {
     url,
     method,
