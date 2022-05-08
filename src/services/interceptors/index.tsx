@@ -1,4 +1,4 @@
-import authRequest from "./authRequest";
-import errorResponse from "./errorResponse";
+import authRequest from './authRequest';
+import errorResponse from './errorResponse';
 
 export { authRequest, errorResponse };
