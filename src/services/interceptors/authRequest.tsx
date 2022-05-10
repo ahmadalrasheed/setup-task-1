@@ -8,7 +8,7 @@ const authRequest = () => {
     return [
         (config: any) => {
             if (includes(AUTH_CHECK_METHODS, config.method)) {
-                const authToken = tokenSelector(store.getState());
+                const authToken = tokenSelector(store?.getState?.());
                 if (authToken) config.headers['Authorization'] = `Bearer ${authToken}`;
             }
 

@@ -10,8 +10,8 @@ const dateFormatSelector = (state: any) => state.auth?.entities?.payload?.user_s
 
 const getSetting = () => {
     return {
-        lang: langSelector(store.getState()),
-        dateFormat: dateFormatSelector(store.getState()),
+        lang: langSelector(store?.getState?.()),
+        dateFormat: dateFormatSelector(store?.getState?.()),
     };
 };
 
