@@ -2,10 +2,9 @@
 import createRouter from 'router5';
 import browserPlugin from 'router5-plugin-browser';
 import loggerPlugin from 'router5-plugin-logger';
-import { forEach, isEmpty } from 'lodash';
+import { isEmpty } from 'lodash';
 
 import authenticationMiddleware from './middlewares/authenticationMiddleware';
-import handlers from './handlers';
 import routes from './routes.json';
 import { store } from 'app/store';
 
@@ -18,8 +17,6 @@ if (process.env.ENABLE_ROUTER_LOGS === 'true') {
 
 router.useMiddleware(authenticationMiddleware);
 router.setDependency('store', store);
-
-forEach(handlers, ([route, handler]) => router.canActivate(String(route), Boolean(handler)));
 
 if (!isEmpty(process.env.ROUTER_ROOT)) {
     router.setRootPath(process.env.ROUTER_ROOT || '');

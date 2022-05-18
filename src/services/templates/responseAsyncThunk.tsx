@@ -1,4 +1,5 @@
 const response = (Request: any) => {
+    console.log('from response', Request);
     return {
         [Request.pending.type]: (state: any, action: any) => {
             if (state.loading === 'idle') {

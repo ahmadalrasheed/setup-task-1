@@ -1,3 +1,9 @@
+import { AppHeader } from '../../../styles/styles.styled';
+
 export const Header = () => {
-    return <div>Header</div>;
+    return (
+        <AppHeader>
+            <div>Header</div>
+        </AppHeader>
+    );
 };

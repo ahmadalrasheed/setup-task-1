@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { requestAsyncThunk, responseAsyncThunk } from '../../templates';
 
 interface UsersState {
-    entities: [];
-    loading: 'idle' | 'pending' | 'succeeded' | 'failed';
-    currentRequestId: undefined;
-    error: [];
+    entities?: [];
+    loading?: 'idle' | 'pending' | 'succeeded' | 'failed';
+    currentRequestId?: undefined;
+    error?: [];
 }
 
 const initialState = {
@@ -15,10 +15,10 @@ const initialState = {
     error: [],
 } as UsersState;
 
-export const signIn = () => {
+export const signIn = (): any => {
     return requestAsyncThunk({
         storeName: 'auth',
-        _url: `auth/login`,
+        _url: `/login`,
         method: 'POST',
     });
 };

@@ -1,3 +1,3 @@
-import * as authAPI from './auth';
+import { authSlice, signIn } from './auth';
 
-export { authAPI };
+export { authSlice, signIn };

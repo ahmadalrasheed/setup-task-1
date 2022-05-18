@@ -30,6 +30,7 @@ const pageStructure = (route: any): any => {
     const pageRoute =
         find(routePaths.reverse(), (route: string) => includes(Object.keys(pageRoutes), route)) ||
         '404';
+    console.log('pageRoute==========', typeof pageRoute);
 
     return pageRoutes[pageRoute as keyof typeof pageRoutes];
 };

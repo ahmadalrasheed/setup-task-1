@@ -1,3 +1,9 @@
+import { AppFooter } from '../../../styles/styles.styled';
+
 export const Footer = () => {
-    return <div>Footer</div>;
+    return (
+        <AppFooter>
+            <div>&copy;Ahmad Alrasheed</div>
+        </AppFooter>
+    );
 };
